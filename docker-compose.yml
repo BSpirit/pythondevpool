@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  frontend:
+    image: teamepita/python-devpool-front
+    restart: always
+    links:
+      - backend
+    ports:
+      - "4000:4000"
+
+  backend:
+    image: teamepita/python-devpool-back
+    restart: always
+    ports:
+      - "5000:80"
